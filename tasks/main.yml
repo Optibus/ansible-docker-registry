@@ -8,11 +8,11 @@
     - libssl-dev
     - liblzma-dev
     - python-dev
-    - python-pip
     - swig
 
 - name: install docker registry
-  pip: name=docker-registry
+  pip: 
+    name: 'git+https://github.com/Optibus/docker-registry.git#egg=docker-registry'
 
 - name: create required directories
   file: dest={{ item }} state=directory
