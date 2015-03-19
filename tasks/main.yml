@@ -27,12 +27,6 @@
     dest=/etc/docker-registry/config.yml
   notify: restart docker-registry
 
-- name: create symlink for config
-  file: >
-    src=/etc/docker-registry/config.yml
-    dest=/usr/local/lib/python2.7/dist-packages/config/config.yml
-    state=link
-
 - name: install docker-registry init file
   template: >
     src=docker-registry.init.j2
